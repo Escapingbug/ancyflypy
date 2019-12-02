@@ -1,0 +1,4 @@
+*.dict.yaml
+*.pyc
+
+__pycache__/
