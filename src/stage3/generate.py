@@ -100,7 +100,7 @@ def gen_word_encoding(word, encodings):
                 basic_encoding[-1][0][0] += initial[0].lower()
             else:
                 encountered_non_hanzi = True
-                basic_encoding.append(([initial.lower()], ['']))
+                basic_encoding.append((set([initial.lower()]), set([''])))
             continue
         else:
             encountered_non_hanzi = False
@@ -114,15 +114,17 @@ def gen_word_encoding(word, encodings):
     # generate optional words selection pattern
     # to best be with rime's selection method, we use the pattern of
     # arbitrary full encoding of one of the characters
-    all_possible_encodings = [] # [[choices]]
-
-
     word_encoding = []
-    for vocal, shape in basic_encoding:
-        all_possible_encodings.append(
-            list(map(lambda x: ''.join(x), itertools.product(vocal, shape))))
+    for with_shape_idx in range(len(basic_encoding)):
+        cur_comb = ['']
+        for i in range(len(basic_encoding)):
+            cur = basic_encoding[i]
+            cur_comb = list(map(lambda x: ''.join(x), itertools.product(cur_comb, cur[0])))
+            if with_shape_idx == i:
+                cur_comb = list(map(lambda x: ''.join(x), itertools.product(cur_comb, cur[1])))
+        word_encoding += cur_comb
 
-    word_encoding = list(map(lambda x: ''.join(x), itertools.product(*all_possible_encodings)))
+    # add original one in string
     word_encoding.append(''.join(list(map(lambda x: ''.join(x[0]), basic_encoding))))
 
     word_encoding = list(reversed(word_encoding))
