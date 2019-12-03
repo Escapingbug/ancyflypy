@@ -90,7 +90,7 @@ def gen_word_encoding(word, encodings):
     for initial, final in pairs:
         if initial == final:
             # non hanzi XXX only first !!
-            word_encoding[0] += initial[0]
+            word_encoding[0] += initial[0].lower()
             continue
         if counts > 1 and (len(initial) > 1 or len(final) > 1):
             # heteronym
@@ -126,7 +126,7 @@ def gen_word_encoding(word, encodings):
 def main():
     global MAX_LENGTH
     if len(sys.argv) < 2:
-        print('usage: {} db output')
+        info_print('usage: {} db output')
         return
 
     db = sys.argv[1]
