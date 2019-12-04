@@ -162,8 +162,7 @@ def main():
                 all_encodings = single_encodings.split()
 
                 for each in all_encodings:
-                    if '*' in each: # should ignore
-                        continue
+                    each = each.replace('*', '')
                     f.write('{}\t{}\t{}\n'.format(character, each, frequency))
                 count += 1
                 info_print('{} / {}'.format(count, all_count))
