@@ -80,6 +80,7 @@ punctuator:
   import_preset: symbols
 
 key_binder:
+  import_preset: default
   bindings:
     - when: has_menu
       accept: comma
