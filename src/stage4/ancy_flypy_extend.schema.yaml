@@ -49,8 +49,6 @@ engine:
 speller:
   alphabet: 'zyxwvutsrqponmlkjihgfedcba'
   delimiter: " ;'"
-  auto_select: true
-  auto_select_unique_candidate: true
 
 translator:
   dictionary: ancy_flypy_extend
