@@ -83,11 +83,11 @@ key_binder:
   bindings:
     - when: has_menu
       accept: comma
-      send: Left
+      send: KP_Left 
 
     - when: has_menu
       accept: period
-      send: Right
+      send: KP_Right
 
 recognizer:
   import_preset: default
