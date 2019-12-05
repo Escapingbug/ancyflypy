@@ -115,7 +115,8 @@ def gen_word_encoding(word, encodings):
     # to best be with rime's selection method, we use the pattern of
     # arbitrary full encoding of one of the characters
     word_encoding = []
-    for with_shape_idx in range(len(basic_encoding)):
+    #for with_shape_idx in range(len(basic_encoding)):
+    for with_shape_idx in range(len(basic_encoding) - 1, len(basic_encoding)):
         cur_comb = ['']
         for i in range(len(basic_encoding)):
             cur = basic_encoding[i]
