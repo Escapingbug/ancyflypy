@@ -45,6 +45,7 @@ engine:
   filters:
     - simplifier
     - uniquifier
+    - single_char_filter
 
 speller:
   alphabet: 'zyxwvutsrqponmlkjihgfedcba'
@@ -83,9 +84,7 @@ speller:
     - derive/^(\w+):(\w)(\w)$/$1$2$3/
     - derive/^(\w+):(\w)\w*$/$1$2/
     - derive/^(\w+):\w+$/$1/
-    #- erase/^:.*$/
     - xform/://
-    #- xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/
     - derive/^(.).*$/$1/
     - derive/^(..).*$/$1/
     - derive/^(...).*$/$1/
