@@ -41,14 +41,56 @@ engine:
   translators:
     - punct_translator
       #- reverse_lookup_translator
-    - table_translator
+    - script_translator 
   filters:
     - simplifier
     - uniquifier
 
 speller:
   alphabet: 'zyxwvutsrqponmlkjihgfedcba'
-  delimiter: " ;'"
+  delimiter: " '"
+  algebra:
+    - xform/uang:/l:/
+    - xform/iang:/l:/
+    - xform/iong:/s:/
+    - xform/ian:/m:/
+    - xform/uan:/r:/
+    - xform/iao:/n:/
+    - xform/ong:/s:/
+    - xform/eng:/g:/
+    - xform/ang:/h:/
+    - xform/uai:/k:/
+    - xform/ing:/k:/
+    - xform/iu:/q:/
+    - xform/ei:/w:/
+    - xform/ue:/t:/
+    - xform/ve:/t:/
+    - xform/un:/y:/
+    - xform/uo:/o:/
+    - xform/ie:/p:/
+    - xform/(\w+)ai:/$1d:/
+    - xform/(\w+)en:/$1f:/
+    - xform/(\w+)an:/$1j:/
+    - xform/(\w+)ou:/$1z:/
+    - xform/(\w+)ao:/$1c:/
+    - xform/ua:/x:/
+    - xform/ia:/x:/
+    - xform/ui:/v:/
+    - xform/in:/b:/
+    - xform/^sh(\w+)/u$1/
+    - xform/^ch(\w+)/i$1/
+    - xform/^zh(\w+)/v$1/
+    - derive/^(\w+):(\w)(\w)$/$1$2$3/
+    - derive/^(\w+):(\w)\w*$/$1$2/
+    - derive/^(\w+):\w+$/$1/
+    #- erase/^:.*$/
+    - xform/://
+    #- xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/
+    - derive/^(.).*$/$1/
+    - derive/^(..).*$/$1/
+    - derive/^(...).*$/$1/
+    - derive/^(....).*$/$1/
+    - derive/^(.....).*$/$1/
 
 translator:
   dictionary: ancy_flypy_extend

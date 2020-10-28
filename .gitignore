@@ -2,3 +2,8 @@
 *.pyc
 
 __pycache__/
+
+# sogou 输入法词库，自行转换
+sogou.txt
+# 输出的临时文件
+out_*.txt
