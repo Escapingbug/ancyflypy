@@ -57,6 +57,15 @@ speller:
     - xform/ian:/m:/
     - xform/uan:/r:/
     - xform/iao:/n:/
+    - xform/^a:/aa:/
+    - xform/^o:/oo:/
+    - xform/^e:/ee:/
+    - xform/^ang:/ah:/
+    - xform/^ai:/ad:/
+    - xform/^en:/ef:/
+    - xform/^an:/aj:/
+    - xform/^ou:/oz:/
+    - xform/^ao:/ac:/
     - xform/ong:/s:/
     - xform/eng:/g:/
     - xform/ang:/h:/
