@@ -85,7 +85,6 @@ speller:
     - derive/^(\w+):(\w)\w*$/$1$2/
     - derive/^(\w+):\w+$/$1/
     - xform/://
-    - derive/^(.).*$/$1/
     - derive/^(..).*$/$1/
     - derive/^(...).*$/$1/
     - derive/^(....).*$/$1/
