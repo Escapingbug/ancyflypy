@@ -18,6 +18,10 @@
 
 东风破：`bash rime-install Escapingbug/ancyflypy`
 
+## 代码结构
+
+`src` 下为构造源码目录。
+
 ## Future Work
 
 - 加入快速导入搜狗输入法细胞词库功能
